@@ -3,6 +3,8 @@
  */
 package org.escoladeltreball.firstassignment;
 
+import java.util.*;
+
 /**
  * @author Pep Méndez
  *
@@ -38,7 +40,18 @@ public final class ReviewImpl implements Review {
 	 */
 	@Override
 	public int[] merge(int[] values, int n) {
-		return null;
+		boolean found = false;
+		int[] finalArray = new int[values.length+1];
+		for (int i=0; i < values.length-1; i++) {
+			if ( values[i] <= n && n <= values[i+1]) {
+				finalArray[i] = n;
+				found = true;
+			}
+			if (found) {
+				finalArra
+			}
+		}
+		int[] finalArray = mergedArray.toArray(new int[0]);
 	}
 
 	/*

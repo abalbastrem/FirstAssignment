@@ -18,7 +18,13 @@ public final class ReviewImpl implements Review {
 	 */
 	@Override
 	public double frequencyPercentage(int[] values, int n) {
-		return 0.0;
+		int counter = 0;
+		for (int value : values) {
+			if (n == value) {
+				counter++;
+			}
+		}
+		return counter/values.length * 100;
 	}
 
 	/*
@@ -28,7 +34,21 @@ public final class ReviewImpl implements Review {
 	 */
 	@Override
 	public int[] merge(int[] values, int n) {
-		return null;
+		int[] merged = new int[values.length + 1];
+		int i = 0;
+		int j = 0;
+		while (i <= values.length) {
+			if (n < values[0]) {
+				merged[0] = n;
+			} else if (n >= values[i] && n <= values[i+1]) {
+				merged[j] = n;
+			} else {
+				merged[j] = values[i];
+				i++;
+			}
+			j++;
+		}
+		return merged;
 	}
 
 	/*
